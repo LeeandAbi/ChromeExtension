@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Queue Item Helper",
+    "version": "1.0",
+    "description": "Displays in progress queue items time elapsed.",
+    "icons": {
+      "16": "images/icons8-bot-16.png",
+      "32": "images/icons8-bot-32.png",
+      "48": "images/icons8-bot-48.png"
+    },
+    "permissions": [
+      "webRequest"
+    ],
+    "host_permissions": [
+      "https://virwsapp393.cua.com.au/odata/QueueProcessingRecords/UiPathODataSvc.RetrieveQueuesProcessing*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "js": ["content.js"],
+        "matches": [
+          "https://virwsapp393.cua.com.au/*"
+        ]
+      }
+    ]
+  }
